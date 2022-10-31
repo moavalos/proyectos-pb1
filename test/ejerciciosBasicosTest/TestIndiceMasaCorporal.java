@@ -1,8 +1,8 @@
-package ejerciciosTest;
+package ejerciciosBasicosTest;
 
 import java.util.Scanner;
 
-import ejercicios.IndiceMasaCorporal;
+import ejerciciosBasicos.IndiceMasaCorporal;
 
 public class TestIndiceMasaCorporal {
 

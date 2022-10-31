@@ -1,8 +1,8 @@
-package ejerciciosTest;
+package ejerciciosBasicosTest;
 
 import java.util.Scanner;
 
-import ejercicios.EcuacionCuadratica;
+import ejerciciosBasicos.EcuacionCuadratica;
 
 public class TestEcuacionCuadratica {
 
