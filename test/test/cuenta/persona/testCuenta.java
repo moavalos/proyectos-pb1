@@ -84,11 +84,10 @@ public class testCuenta {
 		double cantidad = teclado.nextDouble();
 		System.out.println("ingrese el dni del titular");
 		Integer dni = teclado.nextInt();
-		
-		persona.setDni(dni);
 
-		if (persona.getDni().equals(dni) && persona.esMayorDeEdad(persona)) {
-			cuentita = new Cuenta(persona, cantidad);
+		cuentita = new Cuenta(persona, cantidad);
+		
+		if (persona.getDni().equals(dni)) {
 			System.out.println("se creó la cuentita");
 			System.out.println(cuentita.toString());
 

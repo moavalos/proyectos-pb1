@@ -7,10 +7,8 @@ public class Tornillo {
 	private final Integer CANTIDAD_DE_ROSCA;
 	private Integer posicionActual;
 
-	/*
-	 * private final char SENTIDO_HORARIO = 'H'; private final char
-	 * SENTIDO_ANTIHORARIO = 'A';
-	 */
+	private final char SENTIDO_HORARIO = 'H';
+	private final char SENTIDO_ANTIHORARIO = 'A';
 
 	public Tornillo(TipoDeCabeza tipoDeCabeza, int longitud, int cantidadDeRosca) {
 		this.TIPO_DE_CABEZA = tipoDeCabeza;
@@ -20,15 +18,29 @@ public class Tornillo {
 	}
 
 	public boolean girar(char sentido) {
-		boolean ok = false;
-		if (posicionActual < CANTIDAD_DE_ROSCA) {
-			posicionActual++;
-			ok = true;
-		} else if (posicionActual > 0) {
-			posicionActual--;
-			ok = true;
+		boolean sePudoGirar = false;
+		switch (sentido) {
+		case SENTIDO_HORARIO:
+			if (posicionActual < CANTIDAD_DE_ROSCA) {
+				posicionActual++;
+				sePudoGirar = true;
+			} else {
+				sePudoGirar = false;
+			}
+			break;
+		case SENTIDO_ANTIHORARIO:
+			if (posicionActual > 0) {
+				posicionActual--;
+				sePudoGirar = true;
+			} else {
+				sePudoGirar = false;
+			}
+			break;
+		default:
+			sePudoGirar = false;
 		}
-		return ok;
+
+		return sePudoGirar;
 	}
 
 	public TipoDeCabeza getTIPO_DE_CABEZA() {

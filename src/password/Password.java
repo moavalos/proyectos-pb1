@@ -2,8 +2,7 @@ package password;
 
 public class Password {
 
-
-	private Integer longitud;
+	private Integer longitud = 8;
 	private String contrasena;
 
 	public Password(Integer longitud) {
@@ -12,15 +11,9 @@ public class Password {
 	}
 
 	public String generarPassword() {
-		// genera la contrase�a del objeto con la longitud que tenga.
 		String password = "";
 		for (int i = 0; i < longitud; i++) {
-			/*
-			 * aca se genera un numero aleatorio, elige si a�adir una minuscula,mayuscula o
-			 * numero
-			 */
 			Integer eleccion = ((int) Math.floor(Math.random() * 3 + 1));
-
 			if (eleccion == 1) {
 				char minusculas = (char) ((int) Math.floor(Math.random() * (123 - 97) + 97));
 				password += minusculas;
@@ -39,13 +32,11 @@ public class Password {
 	}
 
 	public String esFuerte() {
-		/*
-		 * devuelve un booleano si es fuerte o no, para que sea fuerte debe tener mas de
-		 * 2 may�sculas, mas de 1 min�scula y mas de 5 n�meros.
-		 */
+
 		Integer numeros = 0;
 		Integer minusculas = 0;
 		Integer mayusculas = 0;
+		String estado;
 
 		for (int i = 0; i < contrasena.length(); i++) {
 			if (contrasena.charAt(i) >= 97 && contrasena.charAt(i) <= 122) {
@@ -58,13 +49,12 @@ public class Password {
 				}
 			}
 		}
-		// return contrasena;
 		if (numeros >= 5 && minusculas >= 1 && mayusculas >= 2) {
-			String positivo = " strong password";
-			return positivo;
+			estado = " strong password";
+			return estado;
 		} else {
-			String negativo = " weak password";
-			return negativo;
+			estado = " weak password";
+			return estado;
 		}
 	}
 

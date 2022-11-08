@@ -14,14 +14,15 @@ public class Cuenta {
 		this.titular = titular;
 		this.cantidad = 0.0;
 	}
-	
+
 	public void ingresar(double cantidad) {
-		if(cantidad > 0)
+		if (cantidad > 0)
 			this.cantidad += cantidad;
 	}
-	
-	public void retirar(double retirar) {
-		this.cantidad -= cantidad;
+
+	public void retirar(double cantidad) {
+		if (cantidad < this.cantidad)
+			this.cantidad -= cantidad;
 	}
 
 	public Persona getTitular() {
@@ -44,7 +45,5 @@ public class Cuenta {
 	public String toString() {
 		return "Cuenta [Titular = " + getTitular() + ", Cantidad = " + getCantidad() + "]";
 	}
-
-	
 
 }
