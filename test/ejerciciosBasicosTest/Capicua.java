@@ -1,3 +1,4 @@
+package ejerciciosBasicosTest;
 import java.util.Scanner;
 
 public class Capicua {

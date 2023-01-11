@@ -16,6 +16,8 @@ public class ArrayNumerosPositivos {
 			numeros[i] = (int) Math.round(Math.random() * 100);
 			System.out.println((i+1) + " = " + numeros[i]);
 		}
+		
+		Integer promedio = 0;
 	}
 
 }
